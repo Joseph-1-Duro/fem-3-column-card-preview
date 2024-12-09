@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* paragraph */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+
+    /* bg, heading, btn */
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+body {
+    background-color: var(--very-light-gray);
+    line-height: 1.5;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+main {
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+    padding: 5rem 2.5rem;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    border-radius: 16px;
+    max-width: 960px;
+}
+
+.sedan {
+    background-color: var(--bright-orange);
+}
+
+.suv {
+    background-color: var(--dark-cyan);
+}
+
+.luxury {
+    background-color: var(--very-dark-cyan);
+}
+
+.article {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.article__icon {
+    width: 5rem;
+}
+
+.article__heading {
+    text-transform: uppercase;
+    color: var(--very-light-gray);
+    font-size: 2rem;
+    font-family: "Big Shoulders Display", sans-serif;
+}
+
+.article__content {
+    color: var(--transparent-white);
+}
+
+.article__cta {
+    width: fit-content;
+    padding: 10px 32px;
+    border-radius: 1.5rem;
+    background-color: var(--transparent-white);
+    transition-property: outline, background-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    outline: 3px solid transparent;
+}
+
+.sedan .article__cta {
+    color: var(--bright-orange);
+}
+
+.suv .article__cta {
+    color: var(--dark-cyan);
+}
+
+.luxury .article__cta {
+    color: var(--very-dark-cyan);
+}
+
+.article__cta:hover {
+    color: var(--transparent-white);
+    background-color: hsla(0, 0%, 100%, 0);
+    outline: 3px solid var(--transparent-white);
+}
+
+@media screen and (width > 50em) {
+    .about {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
